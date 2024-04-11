@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Information System</title>
+    <link rel="stylesheet" href="css/tax.css">
+</head>
+<body>
+    <header>
+        <div class="tax">
+            <h2>Biratnagar Metropolitan</h2>
+            <h1>Tax Information System</h1>
+    
+            <nav>
+                <ul>
+                    <li><a href="#">All Wards</a></li>
+                </ul>
+            </nav>
+    
+    </header>
+    <image class="img2" src="taxbar.png" alt="logo2"></image>
+    
+        </div>
+
+       
+    
+        <div id="columnchar" style="width: 100%; height: 500px; margin-right: 40px; margin-top: 100px;"></div>
+
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['bar'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Month', 'Business Tax', 'House Rent Tax', 'Property Tax'],
+                ['Jan', 0, 5, 5],
+                ['Feb', 8, 8, 5],
+                ['Mar', 12, 5, 3],
+                ['Apr', 17, 8, 5],
+                ['May', 24, 18, 8],
+                ['Jun', 8, 8, 5],
+                ['jul', 12, 5, 3],
+                ['Aug', 17, 8, 5],
+                ['Sep', 23, 18, 8],
+                ['Oct', 8, 8, 5],
+                ['Nov', 12, 5, 3],
+                ['Dec', 17, 8, 5],
+               
+            ]);
+
+            var options = {
+                chart: {
+                   
+                title:'Column Chart of Taxes'
+
+                },
+                backgroundColor: '#f4f4f4',
+                colors: ['rgb(236, 136, 82)', 'rgb(65, 184, 213)', 'rgb(45, 139, 186)'] ,
+                
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('columnchar'));
+
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+    </script>
+</body>
+</html>

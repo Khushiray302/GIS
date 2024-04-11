@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .columnchart {
+            display: flex;
+        }
+        .profile{
+            font-size:larger;
+            font-weight: normal;
+            font-style: normal;
+            color: rgb(0, 74, 173);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            margin-left: 17px;
+        }
+        *{
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="profile">
+            <h2>Household</h2>
+        </div>
+    </header>
+
+    <div class="columnchart">
+
+        <div id="columnchart_material" style="width: 50%; height: 500px; margin-right: 40px;"></div>
+
+        <div id="chart_div" style="width: 50%; height: 500px;"></div>
+    </div>
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['bar'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Item', 'Series1', 'Series2', 'Series2'],
+                ['Item1', 0, 5, 5],
+                ['Item2', 8, 8, 5],
+                ['Item3', 12, 5, 3],
+                ['Item4', 17, 8, 5],
+                ['Item5', 25, 18, 8]
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Household by ty type',
+                   
+
+                },
+                backgroundColor: '#f4f4f4',
+                colors: ['skyblue', 'rgb(65, 184, 213)', 'rgb(45, 139, 186)'] ,
+                
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+    </script>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Age', 'Weight', 'height'],
+                [8, 12, 5.4],
+                [4, 5.5, 5],
+                [11, 14, 5.5],
+                [4, 5, 4],
+                [3, 3.5, 4.5],
+                [6.5, 7, 6]
+            ]);
+
+            var options = {
+                title: 'Agriculture and LiveStock',
+                hAxis: { title: 'Age', minValue: 0, maxValue: 15 },
+                vAxis: { title: 'Weight', minValue: 0, maxValue: 15 },
+                legend: 'none',
+                backgroundColor: '#f4f4f4'
+            };
+
+            var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+</body>
+
+</html>

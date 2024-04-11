@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population</title>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<style>
+    h2{
+        font-weight: 400;
+        font-style: normal;
+        color: rgb(0, 74, 173);
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+    }   
+    .graphs{
+        display: flex;
+    }
+    .grap{
+        display: flex;
+    }
+    .donutchart{
+        background-color: rgb(152, 154, 155);
+    }
+</style>
+<body>
+    <header>
+        <div class="profile">
+            <h2>Population</h2>
+        </div>
+    </header>
+        <div class="graphs">
+                <!-- <div class="linechart" style="width: 50%; height: 500px; margin-top: -500px;  ">  </div> -->
+                
+            <canvas id="myChart" style="width: 19%; height: 50%; max-width:50%; background-color: rgb(231, 231, 221); margin-right: 40px;" ></canvas>
+            
+           
+            <div id="donutchart"
+                style="width: 50%; height: 400px; max-width:50%; margin-bottom: 20px; ">
+               
+            </div>
+        </div>
+
+
+            <div class="grap">
+            
+
+                <div id="top_x_div" style="width: 50%; height: 50%; max-width:50%; margin-right: 40px;"></div>
+            
+                <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+
+                <div id="chart_div" style="width: 50%; height: 500px;  max-width:55% "></div>
+            
+
+            </div>
+
+      
+
+        <script type="text/javascript">
+            google.charts.load("current", { packages: ["corechart"] });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Caste', 'Percentage'],
+                    ['Maithili', 33.1],
+                    ['Bahun', 29.2],
+                    ['Tamang', 22.2],
+                    ['Chettri', 15.8]
+
+                ]);
+
+
+                var options = {
+                    title: 'Population By Caste',
+                    pieHole: 0.55,
+                    backgroundColor: '#f4f4f4',
+                    colors: ['rgb(255, 189, 89)','rgb(82, 113, 255)','rgb(140, 82, 255)',  'rgb(255, 87, 87)', ]
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+            }
+
+
+        </script>
+
+
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+        </script>
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['bar'] });
+            google.charts.setOnLoadCallback(drawStuff);
+
+            function drawStuff() {
+                var data = new google.visualization.arrayToDataTable([
+                    ['Move', 'Percentage'],
+                    ["Jan", 10],
+                    ["Feb", 15],
+                    ["Mar", 25],
+                    ["Apr", 32],
+                    ["May", 43],
+                    ["June", 49],
+                    ["july", 49],
+                    ["Aug", 54],
+                    ["Sept", 54],
+                    ["Oct", 60],
+                    ["Nov", 64],
+                    ["Dec", 69]
+                ]);
+
+                var options = {
+                    width: 600,
+                    height: 500,
+                    legend: { position: 'none' },
+                    chart: {
+                        title: 'Population by age',
+                        label: 'Population by age'
+                    },
+                    backgroundColor: '#f4f4f4',
+                    bar: { groupWidth: "90%" }
+                };
+
+                var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+                // Convert the Classic options to Material options.
+                chart.draw(data, google.charts.Bar.convertOptions(options));
+            };
+        </script>
+
+        <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Ward', 'Male', 'Female', 'Others'],
+                    ['Ward1', 1000, 400, 10],
+                    ['Ward2', 1170, 460, 20],
+                    ['Ward3', 660, 112, 50],
+                    ['Ward4', 1030, 540, 31],
+                    ['Ward5', 1000, 400, 10],
+                    ['Ward6', 1120, 460, 20],
+                    ['Ward7', 660, 1170, 50],
+                    ['Ward8', 1030, 540, 31]
+                ]);
+
+                var options = {
+                    title: 'Population By Gender',
+                    hAxis: { title: '', titleTextStyle: { color: '#333' } },
+                    vAxis: { minValue: 0 },
+                    backgroundColor: '#f4f4f4'
+                };
+
+                var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+
+        <script>
+            // Sample data
+            const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Population by month',
+                    backgroundColor: 'blue',
+                    borderColor: 'skyblue',
+                    data: [7, 8, 8, 9, 9, 9.5, 10, 11, 13, 14.5, 15, 17],
+                    fill: false,
+                }]
+            };
+
+            // Configuration options
+            const config = {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Population Trend'
+
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Month'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'Value'
+                            }
+                        }
+                    }
+                }
+            };
+
+            // Create the chart
+            var myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
+
+</body>
+
+</html>
