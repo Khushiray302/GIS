@@ -12,6 +12,29 @@
 
 </head>
 <style>
+  .progress{
+  position: relative;
+  margin: 4px;
+  float:left;
+  text-align: center;
+}
+.barOverflow{ /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 90px; height: 45px; /* Half circle (overflow) */
+  margin-bottom: -14px; /* bring the numbers up */
+}
+.bar{
+  position: absolute;
+  top: 0; left: 0;
+  width: 90px; height: 90px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 5px solid #eee;     /* half gray, */
+  border-bottom-color: #0bf;  /* half azure */
+  border-right-color: #0bf;
+}
+
     h2{
         font-weight: 400;
         font-style: normal;
@@ -28,6 +51,7 @@
     .donutchart{
         background-color: rgb(152, 154, 155);
     }
+    
 </style>
 <body>
     <header>
@@ -49,16 +73,37 @@
 
 
             <div class="grap">
-            
 
                 <div id="top_x_div" style="width: 50%; height: 50%; max-width:50%; margin-right: 40px;"></div>
             
                 <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-
-                <div id="chart_div" style="width: 50%; height: 500px;  max-width:55% "></div>
-            
+                <div class="half_pie" style="background-color: rgb(230, 230, 222); width: 50%; height: 50%; max-width:50%; padding-top: 20px; padding-left: 20px;"> 
+                    <div class="progress">
+                    <div class="barOverflow">
+                        <div class="bar"></div>
+                    </div>
+                    <span>10</span>%
+                    </div>
+        
+                    <div class="progress">
+                    <div class="barOverflow">
+                        <div class="bar"></div>
+                    </div>
+                    <span>34</span>%
+                    </div>
+                    
+                    <div class="progress">
+                    <div class="barOverflow">
+                        <div class="bar"></div>
+                    </div>
+                    <span>56.5</span>%
+                    </div>
+                    <div id="chart_div" style="width: 100%; height: 375px;  max-width:100%; margin-top:100px;"></div>
+                </div>   
 
             </div>
+
+            
 
       
 
@@ -145,7 +190,7 @@
                     ['Ward2', 117, 60, 20],
                     ['Ward3', 130, 112, 50],
                     ['Ward4', 130, 120, 31],
-                    ['Ward5', 190, 100, 10],
+                    ['Ward5', 100, 100, 10],
                     ['Ward6', 112, 160, 20],
                     ['Ward7', 160, 150, 50],
                     ['Ward8', 130, 140, 31]
@@ -212,6 +257,30 @@
                 document.getElementById('myChart'),
                 config
             );
+        </script>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script type="text/javascript" >
+                $(".progress").each(function(){
+        
+                var $bar = $(this).find(".bar");
+                var $val = $(this).find("span");
+                var perc = parseInt( $val.text(), 10);
+
+                $({p:0}).animate({p:perc}, {
+                    duration: 3000,
+                    easing: "swing",
+                    step: function(p) {
+                    $bar.css({
+                        transform: "rotate("+ (45+(p*1.8)) +"deg)", // 100%=180° so: ° = % * 1.8
+                        // 45 is to add the needed rotation to have the green borders at the bottom
+                    });
+                    $val.text(p|0);
+                    }
+                });
+                });
         </script>
 
 </body>

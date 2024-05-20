@@ -1,0 +1,128 @@
+
+  
+  body{
+    background-color: rgb(165, 141, 141);
+}
+
+.container{
+
+    /* background: linear-gradient(to right, #004aad, #cb6ce6); */
+    height: 465px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    border-radius: 18px;
+    
+}
+.container video {
+    width: 100%; /* Ensure the video takes up the full width of the container */
+    height: 100%; /* Ensure the video takes up the full height of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    position: relative; /* Position the video relative to its container */
+    border-radius: 10px;
+}
+
+.container h1 {
+    position: absolute;
+    color: #1024ea;
+    margin-left: -130px;
+    margin-top: -20px;
+    padding: 1px 10px;
+    font-size: 46px;
+    background: aliceblue;
+    border-radius: 10px;
+    text-align: center;
+    background-color: transparent;
+    background-color: rgba(240, 248, 255, 0.5);
+}
+
+.container h1 {
+    top: 50%; /* Position the heading vertically centered */
+    left: 50%; /* Position the heading horizontally centered */
+    transform: translate(-50%, -50%); /* Center the heading precisely */
+}
+
+
+h2.h22 {
+    padding-top: -165px;
+    margin-top: -12%;
+    margin-left: 15%;
+    color: #051c39;
+}
+
+  
+.login-form {
+    position: absolute;
+    top: 37%;
+    left: 30%;
+    transform: translate(85%, -50%);
+    /* padding: 20px 25px; */
+    padding: 2% 2.5%;
+    /* background-image: linear-gradient(to bottom,  #73a5e7, #3f88e7); */
+    background-image: linear-gradient(to bottom, rgba(115, 165, 231, 0.5), rgba(63, 136, 231, 0.5)); /* Transparent background */
+    border-radius: 10px;
+    margin-top: 6%;
+    margin-left: 13%;
+    
+   /* / text-align: center; */
+}
+.form-group input {
+    width: 92%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 1%;
+    color: aliceblue;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.login-form h2 {
+    
+    margin-top: 4px;
+    margin-bottom: 20px;
+    color: white;
+  }
+
+
+.img1{
+    height: 100%;
+    width: 48%;
+    border-radius: 18px;
+}
+h2{
+    color: white;
+}
+
+.form-group{
+    color: bisque;
+}
+
+
+button {
+    padding: 6px 20px;
+    background-color: #5656fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  
+  button:hover {
+    background-color: #7365ec;
+  }
+
+  .create{
+    color: azure;
+    text-align: center;
+  }
+  

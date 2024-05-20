@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="css/log1.css">
+</head>
+<style>
+  .container h1 {
+    position: absolute;
+    color: #e2e2ee;
+    margin-left: -180px;
+    margin-top: 65px;
+    padding: 1px 10px;
+    font-size: 46px;
+    background: aliceblue;
+    border-radius: 10px;
+    text-align: center;
+    background-color: transparent;
+    /* background-color: rgba(240, 248, 255, 0.3); */
+    border-radius: 10px;
+}
+.container h3 {
+    position: absolute;
+    color: #e2e2ee;
+    margin-left: 4%;
+    margin-top: -11%;
+    padding: 1px 10px;
+    font-size: 32px;
+    background: aliceblue;
+    /* border-radius: 10px; */
+    text-align: center;
+    /* background-color: transparent; */
+    background-color: #6565a5;
+    border-radius: 10px;
+}
+
+</style>
+<body>
+  <div class="container">
+    <video autoplay muted loop id="bg-video" class="bgvideo">
+      <source src="v3.mp4" type="video/mp4">
+      
+    </video>
+    <h3>Biratnagar Metropolitan </h3>
+    <h1>PALIKA GIS</h1>
+    
+    <div class="login-form">
+      <h2>Login</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-groups">
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

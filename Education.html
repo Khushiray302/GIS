@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population</title>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<style>
+    .profile{
+        margin-left: 30px;
+        font-size: larger;
+    }
+
+    h2{
+        font-weight: 400;
+        font-style: normal;
+        color: rgb(0, 74, 173);
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+    }   
+    .graphs{
+        display: flex;
+    }
+    .grap{
+
+        margin-top: 20px;
+        display: flex;
+    }
+    .third{
+
+        margin-top: 20px;
+        display: flex;
+     }
+     .fourth{
+
+        display: flex;
+    }
+    
+</style>
+<body>
+    <header>
+        <div class="profile">
+            <h2>Education</h2>
+        </div>
+    </header>
+    
+        <div class="graphs">
+                <!-- <div class="linechart" style="width: 50%; height: 500px; margin-top: -500px;  ">  </div> -->
+                
+            <!-- <canvas id="myChart" style="width: 19%; height: 50%; max-width:50%; background-color: rgb(231, 231, 221); margin-right: 40px;" ></canvas> -->
+            
+            <div id="piechart" style="width: 40%; margin-left: 40px; border: solid 1px black;"></div>
+            <div id="top_x_div" style="width: 35%; height: 500px; max-width:30%;  margin-left: 10px; "></div>
+        </div>
+
+
+        <div class="grap">
+            <div id="top_x" style="width: 50%; height: 500px; max-width:50%;  margin-left: 40px; border: solid 1px black;"></div>
+            
+            <canvas id="myChart" style="width: 19%; height: 190px; max-width:50%;  margin-left: 20px; border: solid 1px black;" ></canvas>
+
+        </div>
+
+        <div class="third">
+            <div id="donutchart"
+                style="width: 50%; height: 500px; max-width:50%; margin-bottom: 20px;  margin-left: 40px;  border: solid 1px black; ">
+           
+            </div>
+
+            <div id="top" style="width: 50%; height: 500px; max-width:50%; margin-left: 20px; border: solid 1px black;"></div>
+        </div>
+
+        <div class="fourth">
+            <div id="chart_div" style="width: 50%; height: 500px;  margin-left: 40px;  border: solid 1px black;"></div>
+
+            <div id="chart" style="width: 50%; height: 500px;  margin-left: 20px; border: solid 1px black;"></div>
+        </div>
+            
+
+      
+
+       
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        
+    <script src="scripts.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawStuff);
+
+        function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+            [' विद्यालय बिचैमा छोडेको हो/होइन ?', 'मानिसहरूको संख्या'],
+            ["हो", 44],
+            ["होइन", 31],
+            
+        ]);
+
+        var options = {
+            title: 'विद्यालय बिचैमा छोडेको हो/होइन ?',
+            width: 500,
+            legend: { position: 'none' },
+            chart: { title: 'विद्यालय बिचैमा छोडेको हो/होइन ?' },
+            bars: 'horizontal', // Required for Material Bar Charts.
+            axes: {
+            x: {
+                0: { side: 'top', label: 'मानिसहरूको संख्या'} // Top x-axis.
+            }
+            },
+        
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top_x'));
+        chart.draw(data, options);
+        };
+
+
+        google.charts.load("current", { packages: ["corechart"] });
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Caste', 'Percentage'],
+                    ['श्रेणी',   6416],
+                    ['जिपिए', 449],
+                    ['प्रतिशत', 1091],
+                ]);
+
+
+                var options = {
+                    title: 'योग्यता निर्धारणको प्रकार',
+                    pieHole: 0.55,
+                    // backgroundColor: '#f4f4f4',
+                    // colors: ['rgb(255, 189, 89)','rgb(82, 113, 255)','rgb(140, 82, 255)', ]
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                chart.draw(data, options);
+            }
+    </script>
+
+    <script type="text/javascript">
+         google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawStuff);
+
+        function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+            ['शैक्षिक श्रेणी', 'मानिसहरूको संख्या'],
+            ["श्रेणी नखुलेकाे", 3022],
+            ["प्रथम", 756],
+            ["द्वितीय", 1864],
+            ["तृतीय", 774],
+            
+        ]);
+
+        var options = {
+            title: ' शैक्षिक श्रेणी',
+            width: 500,
+            legend: { position: 'none' },
+            chart: { title: ' शैक्षिक श्रेणी' },
+            bars: 'horizontal', // Required for Material Bar Charts.
+            axes: {
+            x: {
+                0: { side: 'top', label: 'मानिसहरूको संख्या'} // Top x-axis.
+            }
+            },
+        
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('top'));
+        chart.draw(data, options);
+        };
+
+    </script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawBackgroundColor);
+
+        function drawBackgroundColor() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'X');
+            data.addColumn('number', 'मानिसहरूको संख्या');
+
+            data.addRows([
+                [50,	113],   [55,	33],  [60,	62],  [65,	10],  [70, 12],  [75,1], [80,	20],  [85,	3],  [90,	2],  
+            ]);
+
+            var options = {
+                hAxis: {
+                title: ' प्राप्ताङ्क प्रतिशत'
+                },
+                vAxis: {
+                title: 'मानिसहरूको संख्या'
+                },
+                
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            }
+    </script>
+
+<script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'line']});
+    google.charts.setOnLoadCallback(drawBackgroundColor);
+
+    function drawBackgroundColor() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'मानिसहरूको संख्या');
+
+        data.addRows([
+            [2,	55],   [2.4,	9],  [ 2.6,	14],  [ 2.8,	8],  [ 3,	50],  [ 3.2,	29], [3.4,	4],  [3.6,	10],  [ 4,	3],  
+        ]);
+
+        var options = {
+            hAxis: {
+            title: '  प्राप्ताङ्क जिपिए'
+            },
+            vAxis: {
+            title: 'मानिसहरूको संख्या'
+            },
+            
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart'));
+        chart.draw(data, options);
+        }
+</script>
+       
+   
+   
+   
+   
+    
+    
+   
+    
+
+</body>
+
+</html>

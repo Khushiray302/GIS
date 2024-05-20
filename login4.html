@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="css/sty.css">
+</head>
+<style>
+.login-form {
+    position: absolute;
+    top: 37%;
+    left: -5%;
+    transform: translate(85%, -50%);
+    /* padding: 20px 25px; */
+    padding: 2% 2.5%;
+    background-image: linear-gradient(to bottom,  #73a5e7, #3f88e7);
+    border-radius: 10px;
+    margin-top: 6%;
+    margin-left: 9%;
+    
+   /* / text-align: center; */
+}
+.img1{
+    height: 95%;
+    width: 52%;
+    border-radius: 18px;
+    margin-left: 45%;
+    margin-top: 3%;
+}
+
+.container{
+    background: linear-gradient(to right, #90aed4, #b24fcb);
+    height: 465px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    border-radius: 18px;
+    
+}
+.container .h22 {
+    position: absolute;
+    color: #1024ea;
+    margin-left: 421px;
+    margin-top: -252px;
+    padding: 1px 10px;
+    font-size: 46px;
+    background: aliceblue;
+    border-radius: 10px;
+    text-align: center;
+    background-color: transparent;
+    background-color: rgba(240, 248, 255, 0.5);
+}
+
+</style>
+<body>
+  <div class="container">
+    
+    <img src="earth.png" class="img1" alt="Description of image" width="300">
+    <h2 class="h22">PALIKA GIS </h2>
+    
+    <div class="login-form">
+      <h2>Login </h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-groups">
+            <a href="#" class="forgot-password">Forgot Password?</a>
+          </div>
+        <button type="submit">Login</button>
+        <text class="create">Create Account</text>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
